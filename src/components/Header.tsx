@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
           
           {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden shrink-0">
@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
               onSelectCategory('all');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2 sm:gap-3 group text-decoration-none min-w-0"
+            className="flex items-center gap-2 sm:gap-3 group text-decoration-none shrink-0"
             title="VERA - Vintage for Everyday Trang chủ"
           >
             {/* Laurel Wreath enclosing V Monogram SVG */}
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Zone 2: Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#3D2C20]" aria-label="Menu chính">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-xs xl:text-sm font-semibold text-[#3D2C20] min-w-0" aria-label="Menu chính">
             {navItems.map((item) => {
               if (item.isAtelier) {
                 return (

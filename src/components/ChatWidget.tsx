@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Sparkles, Phone } from 'lucide-react';
 import { getSmartVeraReply } from '../utils/veraChatAssistant';
+import { BRAND_INFO } from '../data/brand';
 
 interface ChatMessage {
   id: string;
@@ -134,7 +135,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenVoucherModal }) =>
   };
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end">
+    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 flex flex-col items-start">
       {/* Chat Window */}
       {isOpen && (
         <div
@@ -253,24 +254,43 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenVoucherModal }) =>
         </div>
       )}
 
-      {/* Floating Toggle Button */}
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 bg-[#7C442A] hover:bg-[#68361E] text-[#FAF8F5] px-3.5 sm:px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer border border-[#FAF8F5]/20"
-        aria-label={isOpen ? 'Đóng khung chat' : 'Mở khung chat tư vấn VERA'}
-      >
-        {isOpen ? (
-          <X className="w-5 h-5 shrink-0" />
-        ) : (
-          <>
-            <MessageCircle className="w-5 h-5 shrink-0" />
-            <span className="hidden sm:inline text-xs font-bold tracking-wide">
-              Chat tư vấn
-            </span>
-          </>
-        )}
-      </button>
+      {/* Floating Hotline & Chat Buttons */}
+      <div className="flex flex-col items-start gap-2.5">
+        <a
+          href={`tel:${BRAND_INFO.hotline.replace(/\s+/g, '')}`}
+          className="flex items-center gap-2 bg-white hover:bg-[#FAF5EE] text-[#7C442A] px-3.5 sm:px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all border border-[#D5C2AF] hover:border-[#7C442A]"
+          aria-label={`Gọi Hotline ${BRAND_INFO.hotline}`}
+          title={`Hotline tư vấn: ${BRAND_INFO.hotline}`}
+        >
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+          </span>
+          <Phone className="w-4 h-4 shrink-0" />
+          <span className="text-xs font-bold tracking-wide tabular-nums">
+            <span className="hidden sm:inline">Hotline: </span>
+            {BRAND_INFO.hotline}
+          </span>
+        </a>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center gap-2 bg-[#7C442A] hover:bg-[#68361E] text-[#FAF8F5] px-3.5 sm:px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer border border-[#FAF8F5]/20"
+          aria-label={isOpen ? 'Đóng khung chat' : 'Mở khung chat tư vấn VERA'}
+        >
+          {isOpen ? (
+            <X className="w-5 h-5 shrink-0" />
+          ) : (
+            <>
+              <MessageCircle className="w-5 h-5 shrink-0" />
+              <span className="text-xs font-bold tracking-wide">
+                Chat tư vấn
+              </span>
+            </>
+          )}
+        </button>
+      </div>
     </div>
   );
 };
