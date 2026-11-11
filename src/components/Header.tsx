@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-4 lg:gap-6 xl:gap-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4 lg:gap-4 xl:gap-6">
           
           {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden shrink-0">
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Zone 2: Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-xs xl:text-sm font-semibold text-[#3D2C20] min-w-0" aria-label="Menu chính">
+          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4 2xl:gap-6 text-xs xl:text-[13px] 2xl:text-sm font-semibold text-[#3D2C20] min-w-0 overflow-x-auto" aria-label="Menu chính">
             {navItems.map((item) => {
               if (item.isAtelier) {
                 return (
@@ -163,39 +163,15 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Zone 3: Actions (Search, Wishlist, Cart) */}
           <div className="flex items-center gap-1 sm:gap-3 shrink-0">
             
-            {/* Search Bar / Input */}
-            <div className="relative">
-              {showSearchInput ? (
-                <div className="hidden sm:flex items-center border border-[#D5C2AF] bg-white rounded-full px-3 py-1.5 shadow-inner">
-                  <Search className="w-4 h-4 text-[#8C6D58] mr-2" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => onSearchChange(e.target.value)}
-                    placeholder="Tìm kiếm: đầm hoa, chân váy..."
-                    className="w-40 md:w-48 text-xs text-[#4A3326] bg-transparent outline-none placeholder:text-[#A89382]"
-                    autoFocus
-                  />
-                  <button
-                    onClick={() => {
-                      setShowSearchInput(false);
-                      onSearchChange('');
-                    }}
-                    className="text-[#8C6D58] hover:text-[#4A3326] text-xs font-semibold px-1"
-                  >
-                    ✕
-                  </button>
-                </div>
-              ) : null}
-              <button
-                onClick={() => setShowSearchInput(!showSearchInput)}
-                className={`p-2 text-[#4A3326] hover:text-[#7C442A] hover:bg-[#F3EBE1] rounded-full transition-colors ${showSearchInput ? 'sm:hidden bg-[#F3EBE1]' : ''}`}
-                title="Tìm kiếm sản phẩm"
-                aria-label="Tìm kiếm sản phẩm"
-              >
-                <Search className="w-5 h-5" />
-              </button>
-            </div>
+            {/* Search Toggle Button */}
+            <button
+              onClick={() => setShowSearchInput(!showSearchInput)}
+              className={`p-2 text-[#4A3326] hover:text-[#7C442A] hover:bg-[#F3EBE1] rounded-full transition-colors cursor-pointer ${showSearchInput ? 'bg-[#F3EBE1] text-[#7C442A]' : ''}`}
+              title="Tìm kiếm sản phẩm"
+              aria-label="Tìm kiếm sản phẩm"
+            >
+              <Search className="w-5 h-5" />
+            </button>
 
             {/* Order Tracking Button (Desktop/Tablet) */}
             <button
@@ -237,17 +213,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Mobile Search Bar Row (expands below navbar without pushing Cart off-screen) */}
+        {/* Expandable Search Bar Row (keeps navbar layout stable on all screen widths) */}
         {showSearchInput && (
-          <div className="sm:hidden pb-3 animate-fadeIn">
-            <div className="flex items-center border border-[#D5C2AF] bg-white rounded-full px-3 py-2 shadow-inner">
+          <div className="pb-3 animate-fadeIn">
+            <div className="max-w-xl mx-auto flex items-center border border-[#D5C2AF] bg-white rounded-full px-3.5 py-2 shadow-inner">
               <Search className="w-4 h-4 text-[#8C6D58] mr-2 shrink-0" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder="Tìm kiếm: đầm hoa, chân váy..."
-                className="flex-1 text-xs text-[#4A3326] bg-transparent outline-none placeholder:text-[#A89382]"
+                className="flex-1 text-xs sm:text-sm text-[#4A3326] bg-transparent outline-none placeholder:text-[#A89382]"
                 autoFocus
               />
               <button
@@ -255,7 +231,8 @@ export const Header: React.FC<HeaderProps> = ({
                   setShowSearchInput(false);
                   onSearchChange('');
                 }}
-                className="text-[#8C6D58] hover:text-[#4A3326] text-xs font-semibold px-1.5"
+                className="text-[#8C6D58] hover:text-[#4A3326] text-xs font-semibold px-1.5 cursor-pointer"
+                aria-label="Đóng tìm kiếm"
               >
                 ✕
               </button>
