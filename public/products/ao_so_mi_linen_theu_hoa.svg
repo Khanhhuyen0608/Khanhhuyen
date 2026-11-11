@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="100%">
+      
+    <defs>
+      <pattern id="linenGrid" width="6" height="6" patternUnits="userSpaceOnUse">
+        <path d="M 0 3 L 6 3 M 3 0 L 3 6" stroke="#7C442A" stroke-width="0.3" opacity="0.12"/>
+      </pattern>
+      <pattern id="ginghamPlaid" width="16" height="16" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#7C442A" opacity="0.25"/>
+        <rect x="8" y="8" width="8" height="8" fill="#7C442A" opacity="0.25"/>
+      </pattern>
+      <pattern id="polkaDots" width="14" height="14" patternUnits="userSpaceOnUse">
+        <circle cx="7" cy="7" r="1.6" fill="#7C442A" opacity="0.6"/>
+      </pattern>
+      <pattern id="ditsyFlowers" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="10" cy="10" r="1.5" fill="#7C442A" opacity="0.7"/>
+        <circle cx="7" cy="9" r="1.2" fill="#E8B49B" opacity="0.8"/>
+        <circle cx="13" cy="9" r="1.2" fill="#E8B49B" opacity="0.8"/>
+        <circle cx="8.5" cy="12" r="1.2" fill="#E8B49B" opacity="0.8"/>
+        <circle cx="11.5" cy="12" r="1.2" fill="#E8B49B" opacity="0.8"/>
+      </pattern>
+      <linearGradient id="softShadow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="black" stop-opacity="0.03"/>
+        <stop offset="100%" stop-color="black" stop-opacity="0.08"/>
+      </linearGradient>
+    </defs>
+    
+      <!-- Canvas Card Surface -->
+      <rect width="300" height="400" fill="#FAF7F2"/>
+      <rect x="12" y="12" width="276" height="376" rx="12" fill="none" stroke="#7C442A" stroke-width="0.8" opacity="0.25"/>
+      <rect x="16" y="16" width="268" height="368" rx="8" fill="none" stroke="#7C442A" stroke-width="0.4" stroke-dasharray="3 3" opacity="0.3"/>
+
+      <!-- Top VERA Monogram Stamp -->
+      <g transform="translate(150, 48)">
+        <circle cx="0" cy="0" r="16" fill="#7C442A" opacity="0.08"/>
+        <text x="0" y="5" font-family="'Playfair Display', serif" font-style="italic" font-size="14" font-weight="600" fill="#7C442A" text-anchor="middle">V</text>
+        <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" letter-spacing="2" fill="#7C442A" text-anchor="middle" opacity="0.8">VERA VINTAGE</text>
+      </g>
+
+      <!-- Main Garment Silhouette -->
+      
+        <g filter="drop-shadow(0px 8px 16px rgba(60,35,20,0.06))">
+          <!-- Puff Sleeves -->
+          <path d="M 80 135 C 60 150 65 190 90 200 C 100 185 105 160 100 140 Z" fill="#FFFDF9" stroke="#7C442A" stroke-width="1.2"/>
+          <path d="M 220 135 C 240 150 235 190 210 200 C 200 185 195 160 200 140 Z" fill="#FFFDF9" stroke="#7C442A" stroke-width="1.2"/>
+          <!-- Torso -->
+          <path d="M 100 135 C 120 120 180 120 200 135 L 188 235 C 150 245 150 245 112 235 Z" fill="#FFFDF9" stroke="#7C442A" stroke-width="1.5"/>
+          <!-- Victorian Collar or Peter Pan Collar -->
+          <path d="M 125 130 C 135 145 145 148 150 148 C 155 148 165 145 175 130 C 160 122 140 122 125 130 Z" fill="#7C442A" opacity="0.15" stroke="#7C442A" stroke-width="1.2"/>
+          <!-- Delicate Front Buttons -->
+          <circle cx="150" cy="165" r="2.5" fill="#7C442A"/>
+          <circle cx="150" cy="185" r="2.5" fill="#7C442A"/>
+          <circle cx="150" cy="205" r="2.5" fill="#7C442A"/>
+          <circle cx="150" cy="225" r="2.5" fill="#7C442A"/>
+          <!-- Waist Bow or Peplum Frill -->
+          <path d="M 112 235 Q 150 255 188 235 L 195 258 Q 150 272 105 258 Z" fill="#FFFDF9" stroke="#7C442A" stroke-width="1.2"/>
+        </g>
+        
+
+      <!-- Bottom Card Metadata Tag -->
+      <g transform="translate(150, 368)">
+        <rect x="-85" y="-14" width="170" height="20" rx="4" fill="white" stroke="#7C442A" stroke-width="0.8" opacity="0.95"/>
+        <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#7C442A" text-anchor="middle">
+          Linen Thêu Tay · Thiết Kế Độc Quyền
+        </text>
+      </g>
+    </svg>
+    

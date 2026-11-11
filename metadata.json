@@ -1,0 +1,6 @@
+{
+  "name": "VERA - Vintage for Everyday",
+  "description": "Thương hiệu thời trang thiết kế VERA phong cách Vintage cổ điển thanh lịch, tôn vinh thần thái rạng rỡ với chất liệu Linen, Cotton, Lụa Satin và Dệt kim cao cấp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
